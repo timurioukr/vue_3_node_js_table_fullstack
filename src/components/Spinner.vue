@@ -4,6 +4,7 @@
 
 <style scoped>
 .lds-ring {
+  margin-top: 50px;
   display: inline-block;
   position: absolute;
   width: 80px;
