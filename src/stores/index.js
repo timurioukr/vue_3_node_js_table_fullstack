@@ -10,7 +10,8 @@ export const useDataStore = defineStore('tableData', {
     async fetchData(params) {
       try {
         this.dataLoaded = false
-        const response = await axios.get(`https://api-staging.entriwise.com/mock/test-task-table${ params?.setNumber || 1 }?${ params?.query || '' }`)
+        const response = await axios.get(`http://localhost:3001/mock/data${ params?.setNumber || 1 }`)
+        // const response = await axios.get(`https://api-staging.entriwise.com/mock/test-task-table${ params?.setNumber || 1 }?${ params?.query || '' }`)
         this.tableData = response.data
         this.dataLoaded = true
       } catch (error) {

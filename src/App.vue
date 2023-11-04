@@ -1,7 +1,6 @@
 <script setup>
 import Table from './components/Table.vue'
 import Filters from './components/Filters.vue'
-import Spinner from './components/Spinner.vue'
 import { useDataStore } from './stores/index'
 import { onMounted, ref } from 'vue'
 
@@ -17,7 +16,8 @@ onMounted(() => dataStore.fetchData())
 
 <template>
   <h1>Register of goods</h1>
-  <Spinner v-if="!dataStore.dataLoaded" />
-  <Filters @resetTable="table.setData()" />
-  <Table ref="table" />
+  <div>
+    <Filters />
+    <Table ref="table" />
+  </div>
 </template>
